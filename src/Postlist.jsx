@@ -1,18 +1,12 @@
 import React from "react";
-import Postdata from "./data.json";
+import Postdetails from "./Postdetails";
+import PostData from "./data.json";
 
-export default function PostList() {
+export default function PostList(props) {
   return (
     <div>
-      <h1> Hello Dinesh</h1>
-      {Postdata.map(details => {
-        return (
-          <div>
-            <h1>{details.name}</h1>
-            <p>{details.city}</p>
-            <h2>{details.age}</h2>
-          </div>
-        );
+      {PostData.map((items, index) => {
+        return <Postdetails data={items} key={index} />;
       })}
     </div>
   );
